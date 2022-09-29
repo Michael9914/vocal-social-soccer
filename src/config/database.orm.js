@@ -71,7 +71,7 @@ const vowels = vowelsModel(sequelize, Sequelize);
 //belognsTo muchos
 
 //Relaciones 
-  matches.hasMany(vowels)
+  matches.hasMany(vowels)   //vowels es mucho matches 1 
  vowels.belongsTo(matches) 
 
 players_list.hasMany(vowels)
