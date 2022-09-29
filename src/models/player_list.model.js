@@ -9,7 +9,7 @@ const players_list =(sequelize, type) =>{
         name: type.STRING, 
         position: type.STRING,
         shirt_number: type.INTEGER,
-        vowel_id: type.INTEGER,
+     
 
         createPlayers_list:{
             type: 'TIMESTAMP',

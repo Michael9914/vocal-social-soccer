@@ -9,7 +9,7 @@ const observations =(sequelize, type) =>{
         stadium: type.STRING, 
         observation_team1: type.STRING,
         observation_team2: type.STRING,
-        match_id: type.INTEGER,
+       
 
         createObservations:{
             type: 'TIMESTAMP',

@@ -9,7 +9,7 @@ const admotions =(sequelize, type) =>{
         
         player_name: type.STRING,
         player_number: type.INTEGER,
-        match_id: type.INTEGER,
+       
 
         createAdmotions:{
             type: 'TIMESTAMP',

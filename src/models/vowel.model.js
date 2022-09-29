@@ -8,7 +8,7 @@ const vowels =(sequelize, type) =>{
 
         name: type.STRING, 
         fullname: type.STRING,
-        match_id: type.INTEGER,
+      
 
         createVowels:{
             type: 'TIMESTAMP',

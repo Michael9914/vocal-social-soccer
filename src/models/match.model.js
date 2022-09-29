@@ -9,7 +9,7 @@ const matches =(sequelize, type) =>{
         stadium: type.STRING, 
         date_start: type.DATE,
         time_start: type.TIME,
-        stadium_id: type.INTEGER,
+    
 
         createMatches:{
             type: 'TIMESTAMP',

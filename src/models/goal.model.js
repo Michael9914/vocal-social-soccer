@@ -9,7 +9,7 @@ const goals =(sequelize, type) =>{
         goal: type.INTEGER,
         player_number: type.INTEGER, 
         team_name: type.STRING,
-        match_id: type.INTEGER,
+     
 
         createGoals:{
             type: 'TIMESTAMP',
