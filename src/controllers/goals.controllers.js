@@ -7,6 +7,10 @@ Goals.getListGoals = (req, res) => {
     res.render('pages/goals/list-goals');
 };
 
+Goals.getAddGoal = (req, res) => {
+  res.render('pages/goals/add-goals');
+};
+
 /* Players.postPlayer = async(req, res) =>{    
     const {
       playername,

@@ -7,14 +7,19 @@ const goalsControllers = require('../controllers/goals.controllers');
 
 router.get('/', goalsControllers.getListGoals);
 
-router.post('/add', async (req, res) => {
-    const {title, url, description} = req.body;
+router.get('/add-goal', goalsControllers.getAddGoal);
+
+router.post('/add-goal', async (req, res) => {
+    const {player_number, team_name} = req.body;
     const newLink = {
-        title,
-        url,
-        description
+        player_number,
+        team_name
     };
-    await pool.query('INSERT INTO links set ?', [newLink]);
+    await pool.query('INSERT INTO goals set ?', [newLink]);
     res.send('received');
+});
+
+router.get('/', async (req, res) => {
+    res.render('pages/goals/list-goals')
 });
 module.exports = router;
