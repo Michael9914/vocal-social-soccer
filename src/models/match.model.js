@@ -1,23 +1,22 @@
-const cards =(sequelize, type) =>{
-    return sequelize.define('cards', {
+const matches =(sequelize, type) =>{
+    return sequelize.define('matches', {
         id: {
             type: type.INTEGER,
             primaryKey: true,
             autoIncrement: true,
         },
 
-        playerposition: type.STRING, 
-        playername: type.STRING,
-        surnameplayer: type.STRING,
-        playerheight: type.STRING,
-        playerage: type.STRING,
+        stadium: type.STRING, 
+        date_start: type.DATE,
+        time_start: type.TIME,
+        stadium_id: type.INTEGER,
 
-        createCards:{
+        createMatches:{
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),
             allowNull: false
         },
-        updateCards:{
+        updateMatches:{
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP '),
             allowNull: false
@@ -27,4 +26,4 @@ const cards =(sequelize, type) =>{
     })
 }
 
-module.exports = cards
+module.exports = matches
