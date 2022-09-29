@@ -1,22 +1,19 @@
-const goals =(sequelize, type) =>{
-    return sequelize.define('goals', {
+const stadiums =(sequelize, type) =>{
+    return sequelize.define('stadiums', {
         id: {
             type: type.INTEGER,
             primaryKey: true,
             autoIncrement: true,
         },
 
-        goal: type.INTEGER,
-        player_number: type.INTEGER, 
-        team_name: type.STRING,
-     
+        name: type.STRING, 
 
-        createGoals:{
+        createStadiums:{
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),
             allowNull: false
         },
-        updateGoals:{
+        updateStadiums:{
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP '),
             allowNull: false
@@ -26,4 +23,4 @@ const goals =(sequelize, type) =>{
     })
 }
 
-module.exports = goals
+module.exports = stadiums

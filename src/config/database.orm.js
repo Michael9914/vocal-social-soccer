@@ -15,6 +15,17 @@ mysql.createConnection({
 })
 
 const goalsModel = require('../models/goal.model');
+const teamsModel = require ('../models/team.model');
+const admontionsModel = require ('../models/admonition.model');
+const expulsionsModel = require ('../models/expulsion.model');
+const matchesModel = require ('../models/match.model');
+const observationsModel = require  ('../models/observation.model');
+const players_listModel = require ('../models/player_list.model');
+const stadiumsModel = require ('../models/stadium.model');
+const vowelsModel = require ('../models/vowel.model');
+
+
+
 
 const sequelize = new Sequelize(
   'social_soccer_vocal',
@@ -46,15 +57,54 @@ sequelize.sync({ force: false })
   })
 
 const goals = goalsModel(sequelize, Sequelize);
+const teams = teamsModel(sequelize, Sequelize);
+const admontions = admontionsModel(sequelize, Sequelize);
+const expulsions = expulsionsModel(sequelize, Sequelize);
+const matches = matchesModel(sequelize, Sequelize);
+const observations = observationsModel(sequelize, Sequelize);
+const players_list = players_listModel(sequelize, Sequelize);
+const stadiums = stadiumsModel(sequelize, Sequelize);
+const vowels = vowelsModel(sequelize, Sequelize);
 
+
+// hasMany uno 
+//belognsTo muchos
 
 //Relaciones 
-/* players.hasMany(teams)
-teams.belongsTo(players)
+  matches.hasMany(vowels)   //vowels es mucho matches 1 
+ vowels.belongsTo(matches) 
 
-teamstats.hasMany(teams)
-teams.belongsTo(teamstats) */
+players_list.hasMany(vowels)
+vowels.belongsTo(players_list) 
+
+teams.hasMany(players_list)
+players_list.belongsTo(teams) 
+
+goals.hasMany(matches)
+matches.belongsTo(goals) 
+
+admontions.hasMany(matches)
+matches.belongsTo(admontions) 
+
+expulsions.hasMany(matches)
+matches.belongsTo(expulsions) 
+
+observations.hasMany(matches)
+matches.belongsTo(observations) 
+
+matches.hasMany(stadiums)
+stadiums.belongsTo(matches) 
+ 
+
 
 module.exports = {
   goals,
+  teams,
+  admontions,
+  expulsions,
+  matches,
+  observations,
+  players_list,
+  stadiums,
+  vowels
 }
