@@ -10,10 +10,11 @@ router.get('/', goalsControllers.getListGoals);
 router.get('/add-goal', goalsControllers.getAddGoal);
 
 router.post('/add-goal', async (req, res) => {
-    const {player_number, team_name} = req.body;
+    const {goal, player_number, team_name} = req.body;
     const newLink = {
+        goal,
         player_number,
-        team_name
+        team_name 
     };
     await pool.query('INSERT INTO goals set ?', [newLink]);
 
