@@ -19,7 +19,6 @@ router.get('/edit-admonition/:id', admonitionsControllers.editAdmonition);
 
 router.post('/edit-admonition/:id', admonitionsControllers.updateAdmonition);
 
-
 module.exports = router;
 
 
