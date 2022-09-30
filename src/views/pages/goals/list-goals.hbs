@@ -1,18 +1,30 @@
 <div class="container p-4">
-    <div class="rw">
-            <div class="col-md-3">
-               <div class="card text-center">
+    <div class="row">
+        {{#each goals}}
+        <div class="col-md-3">
+            <div class="card text-center">
                 <div class="card-body">
                     <a href="">
                         <h3 class="card-title text-uppercase">
-                           
+                            {{player_number}}
                         </h3>
+                        <p class="card-title text-uppercase">
+                            {{team_name}}
+                        </p>
                     </a>
-
-                    <a href="" class="btn btn-danger">Delete</a>
-                    <a href="" class="btn btn-secondary">Edit</a>
+                    <p>{{timeago createGoals}}</p>
+                    <a href="/goals/delete/{{id}}" class="btn btn-danger">Delete</a>
+                    <a href="/goals/edit-goals/{{id}}" class="btn btn-secondary">Edit</a>
                 </div>
-               </div> 
             </div>
+        </div>
+        {{else}}
+        <div class="col-md-4 mx-auto">
+            <div class="card card-body text-center">
+                <p>There are not goals saved yet.</p>
+                <a href="/goals/add-goal">Create one!</a>
+            </div>
+        </div>
+        {{/each}}
     </div>
 </div>

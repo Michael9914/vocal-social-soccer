@@ -3,52 +3,47 @@ const goals = require("../models/goal.model");
 
 const Goals={}
 
-Goals.getListGoals = (req, res) => {
-    res.render('pages/goals/list-goals');
+Goals.getListGoals = async (req, res) => {
+  const goals = await pool.query('SELECT * FROM goals');
+    res.render('pages/goals/list-goals', {goals});
 };
 
 Goals.getAddGoal = (req, res) => {
   res.render('pages/goals/add-goals');
 };
 
-/* Players.postPlayer = async(req, res) =>{    
+Goals.postGoal = async(req, res) =>{    
     const {
-      playername,
-      playerposition,
-      surnameplayer,
-      playerheight,
-      playerage
+      player_number,
+      team_name
     } = req.body;
     const newLink = {
-      playername,
-      playerposition,    
-      surnameplayer,
-      playerheight,
-      playerage
+      player_number,
+      team_name  
     };
-    await pool.query('INSERT INTO players set ?', [newLink]);
-    res.redirect("/players/list-players");
+    await pool.query('INSERT INTO goals set ?', [newLink]);
+    res.redirect("/goals/list-goals");
   };
 
 
-  Players.deletePlayer = async(req, res) =>{
+  Goals.deleteGoal = async(req, res) =>{
     const { id } = req.params;
-    await pool.query("DELETE FROM players WHERE ID = ?", [id]);    
-    res.redirect("/players/list-players");
+    await pool.query("DELETE FROM goals WHERE ID = ?", [id]);    
+    res.redirect("/goals/list-goals");
     };
 
-Players.getPlayer = async (req, res) => {
+  Goals.getGoal = async (req, res) => {
   const { id } = req.params;
-  const player = await pool.query('SELECT * FROM players WHERE id = ?', [id]);
-  res.render('links/player/edit-players', {player: player[0]});
+  const goal = await pool.query('SELECT * FROM goals WHERE id = ?', [id]);
+  res.render('pages/goals/edit-goals', {goal: goal[0]});
 };
-Players.updatePlayer = async (req, res) => {
+Goals.updateGoal = async (req, res) => {
   const { id } = req.params;
-  const { playerposition, playername , surnameplayer, playerheight, playerage } = req.body;
-  const newLink = {playerposition, playername , surnameplayer, playerheight, playerage      
+  const { player_number, team_name } = req.body;
+  const newLink = {player_number, team_name      
   };
-  await pool.query('UPDATE players set ? WHERE id = ?', [newLink, id]);  
-  res.redirect('/players/list-players');
+  await pool.query('UPDATE goals set ? WHERE id = ?', [newLink, id]);  
+  res.redirect('/goals/list-goals');
   
-}; */
+};
 module.exports=Goals

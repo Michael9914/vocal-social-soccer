@@ -16,10 +16,32 @@ router.post('/add-goal', async (req, res) => {
         team_name
     };
     await pool.query('INSERT INTO goals set ?', [newLink]);
-    res.send('received');
+
+    res.redirect('/goals');
 });
 
-router.get('/', async (req, res) => {
-    res.render('pages/goals/list-goals')
+router.get('/delete/:id', async (req, res) => {
+    const {id} = req.params;
+    await pool.query('DELETE FROM goals WHERE ID = ?', [id]);
+    res.redirect('/goals');
 });
+
+/* router.get('/edit-goal/:id', async (req, res) => {
+    const {id} = req.params;
+    const goals = await pool.query('SELECT * FROM goals WHERE id = ?', [id]);
+    res.render('pages/goals/edit-goals', {goal: goals[0]});
+});
+
+router.post('/edit-goal/:id', async (req, res) =>{
+    const {id} = req.params;
+    const {player_number, team_name} = req.body;
+    const newLink = {
+        player_number,
+        team_name
+    };
+    console.log(newLink);
+    await pool.query('UPDATE goals set ? WHERE id = ?', [newLink, id]);
+    res.redirect('/add-goal');
+}); */
+
 module.exports = router;
