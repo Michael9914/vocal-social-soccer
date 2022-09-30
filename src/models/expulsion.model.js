@@ -11,12 +11,12 @@ const expulsions =(sequelize, type) =>{
         player_number: type.INTEGER,
        
         
-        createAdmotions:{
+        createExpulsions:{
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),
             allowNull: false
         },
-        updateAdmotions:{
+        updateExpulsions:{
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP '),
             allowNull: false

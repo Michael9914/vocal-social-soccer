@@ -27,6 +27,14 @@ router.get('/delete/:id', async (req, res) => {
     res.redirect('/goals');
 });
 
+  router.get('/edit-goal/:id', async (req, res) => {
+    const{id}= req.params;
+    const goals = await pool.query('SELECT * FROM goals WHERE id = ?', [id]);
+    console.log(goals);
+    res.render('/goals/edit-goals',{goals: goals})
+
+}); 
+
 /* router.get('/edit-goal/:id', async (req, res) => {
     const {id} = req.params;
     const goals = await pool.query('SELECT * FROM goals WHERE id = ?', [id]);

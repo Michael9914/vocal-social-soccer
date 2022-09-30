@@ -16,11 +16,11 @@ mysql.createConnection({
 
 const goalsModel = require('../models/goal.model');
 const teamsModel = require ('../models/team.model');
-const admontionsModel = require ('../models/admonition.model');
+const admonitionsModel = require ('../models/admonition.model');
 const expulsionsModel = require ('../models/expulsion.model');
 const matchesModel = require ('../models/match.model');
 const observationsModel = require  ('../models/observation.model');
-const players_listModel = require ('../models/player_list.model');
+const playersModel = require ('../models/player.model');
 const stadiumsModel = require ('../models/stadium.model');
 const vowelsModel = require ('../models/vowel.model');
 
@@ -58,11 +58,11 @@ sequelize.sync({ force: false })
 
 const goals = goalsModel(sequelize, Sequelize);
 const teams = teamsModel(sequelize, Sequelize);
-const admontions = admontionsModel(sequelize, Sequelize);
+const admonitions = admonitionsModel(sequelize, Sequelize);
 const expulsions = expulsionsModel(sequelize, Sequelize);
 const matches = matchesModel(sequelize, Sequelize);
 const observations = observationsModel(sequelize, Sequelize);
-const players_list = players_listModel(sequelize, Sequelize);
+const players = playersModel(sequelize, Sequelize);
 const stadiums = stadiumsModel(sequelize, Sequelize);
 const vowels = vowelsModel(sequelize, Sequelize);
 
@@ -74,17 +74,17 @@ const vowels = vowelsModel(sequelize, Sequelize);
   matches.hasMany(vowels)   //vowels es mucho matches 1 
  vowels.belongsTo(matches) 
 
-players_list.hasMany(vowels)
-vowels.belongsTo(players_list) 
+players.hasMany(vowels)
+vowels.belongsTo(players) 
 
-teams.hasMany(players_list)
-players_list.belongsTo(teams) 
+teams.hasMany(players)
+players.belongsTo(teams) 
 
 goals.hasMany(matches)
 matches.belongsTo(goals) 
 
-admontions.hasMany(matches)
-matches.belongsTo(admontions) 
+admonitions.hasMany(matches)
+matches.belongsTo(admonitions) 
 
 expulsions.hasMany(matches)
 matches.belongsTo(expulsions) 
@@ -100,11 +100,11 @@ stadiums.belongsTo(matches)
 module.exports = {
   goals,
   teams,
-  admontions,
+  admonitions,
   expulsions,
   matches,
   observations,
-  players_list,
+  players,
   stadiums,
   vowels
 }

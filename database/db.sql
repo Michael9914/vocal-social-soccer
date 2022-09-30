@@ -16,20 +16,20 @@ ALTER TABLE vowels
 
 DESCRIBE vowels;
 
-CREATE TABLE player_list(
+CREATE TABLE players(
     id INT(11) NOT NULL,
     name VARCHAR(16) NOT NULL,
     position VARCHAR(60) NOT NULL,
     shirt_number INT NOT NULL
 );
 
-ALTER TABLE players_list
+ALTER TABLE players
     ADD PRIMARY KEY (id)
 
-ALTER TABLE players_list
+ALTER TABLE players
     MODIFY id INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 2;
 
-DESCRIBE players_list;
+DESCRIBE players;
 
 CREATE TABLE goal(
     id INT(11) NOT NULL,

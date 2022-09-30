@@ -1,0 +1,33 @@
+<div class="container p-4">
+    <div class="row">
+        {{#each players}}
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <a href="">
+                        <h3 class="card-title text-uppercase">
+                            {{name}}
+                        </h3>
+                        <p class="card-title text-uppercase">
+                            {{position}}
+                        </p>
+                           <p class="card-title text-uppercase">
+                            {{shirt_number}}
+                        </p>
+                    </a>
+                    <p>{{timeago createPlayers}}</p>
+                    <a href="/players/delete/{{id}}" class="btn btn-danger">Delete</a>
+                    <a href="/players/edit-players/{{id}}" class="btn btn-secondary">Edit</a>
+                </div>
+            </div>
+        </div>
+        {{else}}
+        <div class="col-md-4 mx-auto">
+            <div class="card card-body text-center">
+                <p>There are not players saved yet.</p>
+                <a href="/players/add-player">Create one!</a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

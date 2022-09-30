@@ -3,12 +3,12 @@
         <div class="col-md-4 mx-auto">
             <div class="card">
                 <div class="card-body">
-                    <form action="/goals/add-goal" method="POST">
+                   <form action="/expulsions/edit-expulsions/{{expulsion.id}}" method="POST">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="player_number" placeholder="Número del jugador" autofocus>
+                            <input type="text" value="{{expulsions.player_name}}" class="form-control" name="player_name" placeholder="Nombre del jugador" autofocus>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="team_name" class="form-control" placeholder="Nombre del equipo">
+                            <input type="text" value="{{expulsions.player_number}}" name="player_number" class="form-control" placeholder="Número del jugador">
                         </div>
                         <div class="form-group">
                             <button class="btn btn-success btn-block">

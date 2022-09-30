@@ -1,5 +1,5 @@
-const players_list =(sequelize, type) =>{
-    return sequelize.define('players_list', {
+const players =(sequelize, type) =>{
+    return sequelize.define('players', {
         id: {
             type: type.INTEGER,
             primaryKey: true,
@@ -26,4 +26,4 @@ const players_list =(sequelize, type) =>{
     })
 }
 
-module.exports = players_list
+module.exports = players
