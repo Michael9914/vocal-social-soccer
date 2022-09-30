@@ -6,7 +6,7 @@ const admonitionsControllers = require('../controllers/admonitions.controller');
 
 
 router.get('/add-admonition', (req, res) =>{
-    res.reder('pages/admonitions/add-admonitions');
+    res.render('pages/admonitions/add-admonitions');
 });
 
 router.post('/post-admonition', admonitionsControllers.postAdmonition);
@@ -15,7 +15,7 @@ router.get('/', admonitionsControllers.getListAdmonitions);
 
 router.get('/delete-admonition/:id', admonitionsControllers.deleteAdmonition);
 
-router.get('/edit-admonition/:id', admonitionsControllers.getAdmonition);
+router.get('/edit-admonition/:id', admonitionsControllers.editAdmonition);
 
 router.post('/edit-admonition/:id', admonitionsControllers.updateAdmonition);
 

@@ -15,8 +15,8 @@ Admonitions.postAdmonition = async(req, res) =>{
     
   };
   await pool.query('INSERT INTO admonitions set ?', [newLink]);
-  req.flash('success', 'Amonestación creada correctamente');
-  res.redirect("/admonitions/list-admonitions");
+  /* req.flash('success', 'Amonestación creada correctamente'); */
+  res.redirect("/admonitions");
 };
 
 
@@ -28,14 +28,15 @@ Admonitions.getListAdmonitions = async (req, res) => {
 Admonitions.deleteAdmonition = async(req, res) =>{
   const { id } = req.params;
   await pool.query("DELETE FROM admonitions WHERE ID = ?", [id]);    
-  req.flash('success', 'Amonestación ELIMINADO CORRECTAMENTE');
-  res.redirect("/admonitions/list-admonitions");
+  /* req.flash('success', 'Amonestación ELIMINADO CORRECTAMENTE'); */
+  res.redirect("/admonitions");
   };
 
-  Admonitions.getAdmonition = async (req, res) => {
+  Admonitions.editAdmonition = async (req, res) => {
     const { id } = req.params;
-    const admonition = await pool.query('SELECT * FROM admonitions WHERE id = ?', [id]);
-    res.render('pages/admonition/edit-admonition', {admonition: admonition[0]});
+    const admonitions = await pool.query('SELECT * FROM admonitions WHERE id = ?', [id]);
+    console.log(admonitions[0]);
+    res.render('pages/admonitions/edit-admonitions', {admonition: admonitions[0]}); 
 };
 
 
@@ -46,9 +47,9 @@ Admonitions.updateAdmonition = async (req, res) => {
   { player_name ,
     player_number
   };
-  await pool.query('UPDATE admonitions set ? WHERE id = ?', [newLink, id]);  
-  req.flash('success', 'amonestación EDITADO CORRECTAMENTE')
-  res.redirect('/admonitions/list-admonitions');
+   await pool.query('UPDATE admonitions set ? WHERE id = ?', [newLink, id]); 
+ /*   req.flash('success', 'amonestación EDITADO CORRECTAMENTE')  */
+ res.redirect('/admonitions'); 
   
 }; 
 module.exports=Admonitions
