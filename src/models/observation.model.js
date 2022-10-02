@@ -6,7 +6,6 @@ const observations =(sequelize, type) =>{
             autoIncrement: true,
         },
 
-        stadium: type.STRING, 
         observation_team1: type.STRING,
         observation_team2: type.STRING,
        

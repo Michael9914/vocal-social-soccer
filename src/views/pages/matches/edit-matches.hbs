@@ -3,15 +3,15 @@
         <div class="col-md-4 mx-auto">
             <div class="card">
                 <div class="card-body">
-                    <form action="/goals/edit-goal/{{goal.id}}" method="POST">
+                    <form action="/matches/edit-match/{{match.id}}" method="POST">
                              <div class="form-group">
-                            <input type="text" value="{{goal.goal}}" class="form-control" name="goal" placeholder="Número de gol" autofocus>
+                            <input type="text" value="{{match.stadium}}" class="form-control" name="stadium" placeholder="Nombre del estadio" autofocus>
                         </div>
                         <div class="form-group">
-                            <input type="text" value="{{goal.player_number}}" name="player_number" class="form-control" placeholder="Número del jugador">
+                            <input type="text" value="{{match.date_start}}" name="date_start" class="form-control" placeholder="Fecha del partido">
                         </div>
                         <div class="form-group">
-                            <input type="text" value="{{goal.team_name}}" name="team_name" class="form-control" placeholder="Nombre del equipo">
+                            <input type="text" value="{{match.time_start}}" name="time_start" class="form-control" placeholder="Hora inicio del partido">
                         </div>
                         <div class="form-group">
                             <button class="btn btn-success btn-block">

@@ -1,0 +1,27 @@
+<div class="container p-4">
+    <div class="row">
+        {{#each stadiums}}
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <a href="">
+                        <p class="card-title text-uppercase">
+                            {{name}}
+                        </p>
+                    </a>
+                    <p>{{timeago createStadiums}}</p>
+                    <a href="/stadiums/delete-stadium/{{id}}" class="btn btn-danger">Delete</a>
+                    <a href="/stadiums/edit-stadium/{{id}}" class="btn btn-secondary">Edit</a>
+                </div>
+            </div>
+        </div>
+        {{else}}
+        <div class="col-md-4 mx-auto">
+            <div class="card card-body text-center">
+                <p>There are not stadiums saved yet.</p>
+                <a href="/stadiums/add-stadium">Create one!</a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

@@ -7,8 +7,6 @@ const teams =(sequelize, type) =>{
         },
 
         name: type.STRING, 
-        logo: type.STRING, 
-       
 
         createTeams:{
             type: 'TIMESTAMP',

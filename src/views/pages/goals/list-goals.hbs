@@ -5,16 +5,19 @@
             <div class="card text-center">
                 <div class="card-body">
                     <a href="">
-                        <h3 class="card-title text-uppercase">
+                        <p class="card-title text-uppercase">
+                            {{goal}}
+                        </p>
+                        <p class="card-title text-uppercase">
                             {{player_number}}
-                        </h3>
+                        </p>
                         <p class="card-title text-uppercase">
                             {{team_name}}
                         </p>
                     </a>
                     <p>{{timeago createGoals}}</p>
-                    <a href="/goals/delete/{{id}}" class="btn btn-danger">Delete</a>
-                    <a href="/goals/edit-goals/{{id}}" class="btn btn-secondary">Edit</a>
+                    <a href="/goals/delete-goal/{{id}}" class="btn btn-danger">Delete</a>
+                    <a href="/goals/edit-goal/{{id}}" class="btn btn-secondary">Edit</a>
                 </div>
             </div>
         </div>
