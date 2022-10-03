@@ -3,43 +3,63 @@ const teams = require("../models/team.model");
 
 const Teams={}
 
-Team.getListTeams = (req, res) => {
-    res.render('pages/teams/list-teams');
+Teams.postTeam = async(req, res) =>{    
+  const {
+    name,
+ 
+    
+  } = req.body;
+  const newLink = {
+    name,
+
+    
+  };
+  await pool.query('INSERT INTO teams set ?', [newLink]);
+  /* req.flash('success', 'Amonestación creada correctamente'); */
+  res.redirect("/teams");
 };
 
- Teams.postTeam = async(req, res) =>{    
-    const {
-        name,
-        logo,
-      
-    } = req.body;
-    const newLink = {
-        name,
-        logo,
-      
-    };
-    await pool.query('INSERT INTO teams set ?', [newLink]);
-    res.redirect("/teams/list-teams");
+
+Teams.getListTeams = async (req, res) => {
+  const teams = await pool.query ('SELECT * FROM teams');
+    res.render('pages/teams/list-teams', {teams});
+};
+
+Teams.deleteTeam = async(req, res) =>{
+  const { id } = req.params;
+  await pool.query("DELETE FROM teams WHERE ID = ?", [id]);    
+  /* req.flash('success', 'Amonestación ELIMINADO CORRECTAMENTE'); */
+  res.redirect("/teams");
   };
 
-
-  Teams.deletePlayer = async(req, res) =>{
+  Teams.editTeam = async (req, res) => {
     const { id } = req.params;
-    await pool.query("DELETE FROM teams WHERE ID = ?", [id]);    
-    res.redirect("/teams/list-teams");
-    };
-
-  Teams.getTeam = async (req, res) => {
-  const { id } = req.params;
-  const team = await pool.query('SELECT * FROM teams WHERE id = ?', [id]);
-  res.render('pages/team/edit-teams', {team: team[0]});
+    const teams = await pool.query('SELECT * FROM teams WHERE id = ?', [id]);
+    console.log(teams[0]);
+    res.render('pages/teams/edit-teams', {team: teams[0]}); 
 };
+
+
 Teams.updateTeam = async (req, res) => {
   const { id } = req.params;
-  const {  player_name , player_number } = req.body;
-  const newLink = { player_name , player_number};
-  await pool.query('UPDATE teams set ? WHERE id = ?', [newLink, id]);  
-  res.redirect('/teams/list-teams');
+  const {  name } = req.body;
+  const newLink = 
+  { 
+    name,
+  };
+   await pool.query('UPDATE teams set ? WHERE id = ?', [newLink, id]); 
+ /*   req.flash('success', 'amonestación EDITADO CORRECTAMENTE')  */
+ res.redirect('/teams'); 
   
 }; 
 module.exports=Teams
+
+
+
+
+
+
+/* 
+Teams.getAddTeam = (req, res) => {
+  res.render('pages/teams/add-teams');
+}; */

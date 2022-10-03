@@ -38,7 +38,11 @@ app.use('/goals', require('./routes/goals.routes'));
 app.use('/admonitions', require('./routes/admonitions.routes'));
 app.use('/expulsions', require('./routes/expulsions.routes'));
 app.use('/players', require('./routes/players.routes'));
-
+app.use('/matches', require('./routes/matches.routes'));
+app.use('/observations', require('./routes/observations.routes'));
+app.use('/players', require('./routes/players.routes'));
+app.use('/stadiums', require('./routes/stadiums.routes'));
+app.use('/teams', require('./routes/teams.routes'));
 //Public
 app.use(express.static(path.join(__dirname, 'public')));
 

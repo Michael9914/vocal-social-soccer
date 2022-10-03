@@ -7,6 +7,9 @@
                 <div class="content">
                     <a href="">
                         <h3 class="card-title text-uppercase">
+                            {{goal}}
+                        </h3>
+                        <h3 class="card-title text-uppercase">
                             {{player_number}}
                         </h3>
                         <h3 class="card-title text-uppercase">
@@ -14,10 +17,8 @@
                         </h3>
                     </a>
                     <p>{{timeago createGoals}}</p>
-                    <a href="/goals/delete/{{id}}" style="background-color: red ; color:aliceblue;"
-                        class="btn btn-danger">Eliminar</a>
-                    <a href="/goals/edit-goals/{{id}}" style="background-color: rgb(12, 174, 0) ; color:aliceblue;"
-                        class="btn btn-secondary">Editar</a>
+                    <a href="/goals/delete-goal/{{id}}" style="background-color: red ; color:aliceblue;" class="btn btn-danger">Delete</a>
+                    <a href="/goals/edit-goal/{{id}}"  style="background-color: rgb(12, 174, 0) ; color:aliceblue;" class="btn btn-secondary">Edit</a>
                 </div>
             </div>
         </div>

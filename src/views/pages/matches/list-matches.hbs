@@ -1,0 +1,33 @@
+<div class="container p-4">
+    <div class="row">
+        {{#each matches}}
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <a href="">
+                        <p class="card-title text-uppercase">
+                            {{stadium}}
+                        </p>
+                        <p class="card-title text-uppercase">
+                            {{date_start}}
+                        </p>
+                        <p class="card-title text-uppercase">
+                            {{time_start}}
+                        </p>
+                    </a>
+                    <p>{{timeago createMatches}}</p>
+                    <a href="/matches/delete-match/{{id}}" class="btn btn-danger">Delete</a>
+                    <a href="/matches/edit-match/{{id}}" class="btn btn-secondary">Edit</a>
+                </div>
+            </div>
+        </div>
+        {{else}}
+        <div class="col-md-4 mx-auto">
+            <div class="card card-body text-center">
+                <p>There are not matches saved yet.</p>
+                <a href="/matches/add-match">Create one!</a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

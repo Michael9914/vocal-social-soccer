@@ -1,0 +1,30 @@
+<div class="container p-4">
+    <div class="row">
+        {{#each observations}}
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <a href="">
+                        <p class="card-title text-uppercase">
+                            {{observation_team1}}
+                        </p>
+                        <p class="card-title text-uppercase">
+                            {{observation_team2}}
+                        </p>
+                    </a>
+                    <p>{{timeago createMatches}}</p>
+                    <a href="/observations/delete-observation/{{id}}" class="btn btn-danger">Delete</a>
+                    <a href="/observations/edit-observation/{{id}}" class="btn btn-secondary">Edit</a>
+                </div>
+            </div>
+        </div>
+        {{else}}
+        <div class="col-md-4 mx-auto">
+            <div class="card card-body text-center">
+                <p>There are not observations saved yet.</p>
+                <a href="/observations/add-observation">Create one!</a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

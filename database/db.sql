@@ -49,7 +49,6 @@ DESCRIBE goals;
 
 CREATE TABLE match(
     id INT(11) NOT NULL,
-    stadium VARCHAR(16) NOT NULL,
     date_start DATE NOT NULL,
     Time_start TIME NOT NULL,
     

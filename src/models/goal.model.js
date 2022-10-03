@@ -5,7 +5,8 @@ const goals =(sequelize, type) =>{
             primaryKey: true,
             autoIncrement: true,
         },
-
+ 
+        goal: type.INTEGER,
         player_number: type.INTEGER, 
         team_name: type.STRING,
      

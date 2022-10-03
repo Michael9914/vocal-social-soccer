@@ -3,16 +3,15 @@
         <div class="col-md-4 mx-auto">
             <div class="card">
                 <div class="card-body">
-                    
-                    <form action="/players/edit-players/{{player.id}}" method="POST">
+                    <form action="/players/edit-player/{{player.id}}" method="POST">
                         <div class="form-group">
-                            <input type="text" value="{{player.name}}" class="form-control" name="name" placeholder="Nombre del jugador" autofocus>
+                            <input type="text" value="{{player.name}}" name="name" class="form-control" placeholder="Nombre del jugador">
                         </div>
                         <div class="form-group">
-                            <input type="text" value="{{player.position}}" name="position" class="form-control" placeholder="Posición">
+                           <input type="text" value="{{player.position}}" name="position" class="form-control" placeholder="posición del jugador">
                         </div>
-                        <div class="form-group">
-                            <input type="text" value="{{player.shirt_number}}" name="shirt_number" class="form-control" placeholder="Número de camiseta">
+                          <div class="form-group">
+                           <input type="text" value="{{player.shirt_number}}" name="shirt_number" class="form-control" placeholder="Número de camiseta">
                         </div>
                         <div class="form-group">
                             <button class="btn btn-success btn-block">
@@ -26,3 +25,4 @@
         </div>
     </div>
 </div>
+
