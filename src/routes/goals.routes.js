@@ -10,9 +10,8 @@ router.get('/', goalsControllers.getListGoals);
 router.get('/add-goal', goalsControllers.getAddGoal);
 
 router.post('/add-goal', async (req, res) => {
-    const {goal, player_number, team_name} = req.body;
+    const {player_number, team_name} = req.body;
     const newLink = {
-        goal,
         player_number,
         team_name 
     };
