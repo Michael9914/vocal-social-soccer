@@ -1,25 +1,30 @@
+<link rel="stylesheet" href="/css/styles-list-stadium.css">
 <div class="container p-4">
     <div class="row">
         {{#each stadiums}}
-        <div class="col-md-3">
-            <div class="card text-center">
-                <div class="card-body">
+        <div class="card">
+            <div class="box">
+                <div class="content">
                     <a href="">
-                        <p class="card-title text-uppercase">
+                        <h3 class="card-title text-uppercase">
                             {{name}}
-                        </p>
+                        </h3>
                     </a>
                     <p>{{timeago createStadiums}}</p>
-                    <a href="/stadiums/delete-stadium/{{id}}" class="btn btn-danger">Delete</a>
-                    <a href="/stadiums/edit-stadium/{{id}}" class="btn btn-secondary">Edit</a>
+                    <a href="/stadiums/delete-stadium/{{id}}" style="background-color: red ; color:aliceblue;"
+                        class="btn btn-danger">Eliminar</a>
+                    <a href="/stadiums/edit-stadium/{{id}}" style="background-color: rgb(12, 174, 0) ; color:aliceblue;"
+                        class="btn btn-secondary">Editar</a>
                 </div>
             </div>
         </div>
         {{else}}
-        <div class="col-md-4 mx-auto">
-            <div class="card card-body text-center">
-                <p>There are not stadiums saved yet.</p>
-                <a href="/stadiums/add-stadium">Create one!</a>
+        <div class="card">
+            <div class="box">
+                <div class="content">
+                    <p>Sin registros por el momento.</p>
+                    <a href="/stadiums/add-stadium">Crear uno!</a>
+                </div>
             </div>
         </div>
         {{/each}}

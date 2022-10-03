@@ -1,29 +1,32 @@
+<link rel="stylesheet" href="/css/styles-list-observation.css">
 <div class="container p-4">
     <div class="row">
         {{#each observations}}
-        <div class="col-md-3">
-            <div class="card text-center">
-                <div class="card-body">
+        <div class="card">
+            <div class="box">
+                <div class="content">
                     <a href="">
-                        <p class="card-title text-uppercase">
+                        <h3 class="card-title text-uppercase">
                             {{observation_team1}}
-                        </p>
-                        <p class="card-title text-uppercase">
+                        </h3>
+                        <h3 class="card-title text-uppercase">
                             {{observation_team2}}
-                        </p>
+                        </h3>
                     </a>
                     <p>{{timeago createMatches}}</p>
-                    <a href="/observations/delete-observation/{{id}}" class="btn btn-danger">Delete</a>
-                    <a href="/observations/edit-observation/{{id}}" class="btn btn-secondary">Edit</a>
+                    <a href="/observations/delete-observation/{{id}}" style="background-color: red ; color:aliceblue;" class="btn btn-danger">Eliminar</a>
+                    <a href="/observations/edit-observation/{{id}}" style="background-color: rgb(12, 174, 0) ; color:aliceblue;" class="btn btn-secondary">Editar</a>
                 </div>
             </div>
         </div>
         {{else}}
-        <div class="col-md-4 mx-auto">
-            <div class="card card-body text-center">
-                <p>There are not observations saved yet.</p>
-                <a href="/observations/add-observation">Create one!</a>
+        <div class="card">
+            <div class="box">
+                <div class="content">
+                <p>Sin registros por el momento.</p>
+                <a href="/observations/add-observation">Crear uno!</a>
             </div>
+        </div>
         </div>
         {{/each}}
     </div>
