@@ -1,25 +1,25 @@
-<div class="container p-4">
-    <div class="row">
-        <div class="col-md-4 mx-auto">
-            <div class="card">
-                <div class="card-body">
-                    <form action="/admonitions/edit-admonition/{{admonition.id}}" method="POST">
-                             <div class="form-group">
-                            <input type="text" value="{{admonition.player_name}}" class="form-control" name="player_name" placeholder="Nombre del jugador" autofocus>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" value="{{admonition.player_number}}" name="player_number" class="form-control" placeholder="Número del jugador">
-                        </div>
-                        <div class="form-group">
-                            <button class="btn btn-success btn-block">
-                                Guardar
-                            </button>
-                        </div>
-                    </form>
-                    <link rel="stylesheet" href="/css/styles-edit-admonition.css">
-                </div>
+<div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
+    <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
+        <h1><a>Editar amonestación</a></h1>
+    </div>
+    <div class="formbg-outer">
+        <div class="formbg">
+            <div class="formbg-inner padding-horizontal--48">
+                <form action="/admonitions/edit-admonition/{{admonition.id}}" method="POST">
+                    <div class="field padding-bottom--24">
+                        <input type="text" value="{{admonition.player_name}}" class="form-control" name="player_name"
+                            placeholder="Nombre del jugador" autofocus>
+                    </div>
+                    <div class="field padding-bottom--24">
+                        <input type="text" value="{{admonition.player_number}}" name="player_number"
+                            class="form-control" placeholder="Número del jugador">
+                    </div>
+                    <div class="field padding-bottom--24">
+                        <input type="submit" name="submit" value="Guardar">
+                    </div>
+                </form>
+                <link rel="stylesheet" href="/css/forms.css">
             </div>
         </div>
     </div>
 </div>
-

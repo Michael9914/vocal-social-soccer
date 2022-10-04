@@ -1,33 +1,32 @@
-<link rel="stylesheet" href="/css/styles-list-observation.css">
-<div class="container p-4">
-    <div class="row">
-        {{#each observations}}
-        <div class="card">
-            <div class="box">
-                <div class="content">
-                    <a href="">
-                        <h3 class="card-title text-uppercase">
-                            {{observation_team1}}
-                        </h3>
-                        <h3 class="card-title text-uppercase">
-                            {{observation_team2}}
-                        </h3>
-                    </a>
-                    <p>{{timeago createMatches}}</p>
-                    <a href="/observations/delete-observation/{{id}}" style="background-color: red ; color:aliceblue;" class="btn btn-danger">Eliminar</a>
-                    <a href="/observations/edit-observation/{{id}}" style="background-color: rgb(12, 174, 0) ; color:aliceblue;" class="btn btn-secondary">Editar</a>
-                </div>
+<link rel="stylesheet" href="/css/cards.css">
+<div class="container">
+    {{#each observations}}
+    <div class="card">
+        <div class="box">
+            <div class="content">
+                <h3>
+                    {{observation_team1}}
+                </h3>
+                <h3>
+                    {{observation_team2}}
+                </h3>
+                <center>
+                    <a href="/observations/delete-observation/{{id}}" style="background-color: red ; color:aliceblue;"
+                        class="danger">Eliminar</a>
+                    <a href="/observations/edit-observation/{{id}}" style="background-color: black; color:aliceblue;"
+                        class="secondary">Editar</a>
+                </center>
             </div>
         </div>
-        {{else}}
-        <div class="card">
-            <div class="box">
-                <div class="content">
+    </div>
+    {{else}}
+    <div class="card">
+        <div class="box">
+            <div class="content">
                 <p>Sin registros por el momento.</p>
                 <a href="/observations/add-observation">Crear uno!</a>
             </div>
         </div>
-        </div>
-        {{/each}}
     </div>
+    {{/each}}
 </div>

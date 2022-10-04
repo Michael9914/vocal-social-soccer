@@ -21,6 +21,18 @@ body .container {
     border-radius: 10%;
 }
 
+body .container .card {
+    position: relative;
+    min-width: 210px;
+    height: 260px;
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+      inset -5px -5px 15px rgba(0, 0, 0, 0.1),
+      5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    margin: 5%;
+    transition: 0.5s;
+  }
+  
 body .container .card .box .content h3 {
     font-size: 1.8rem;
     color: brown;
@@ -46,7 +58,7 @@ body .container .card .box .content p {
 body .container .card .box .content a {
     position: relative;
     display: inline-block;
-    padding: 5% 10%;
+    padding: 5% 20%;
     background: rgb(253, 253, 253);
     border-radius: 5px;
     text-decoration: none;

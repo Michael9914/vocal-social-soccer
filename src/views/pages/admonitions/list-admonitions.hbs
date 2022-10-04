@@ -1,35 +1,32 @@
-<link rel="stylesheet" href="/css/styles-list-admonition.css">
-<div class="container p-4">
-    <div class="row">
-        {{#each admonitions}}
-        <div class="card">
-            <div class="box">
-                <div class="content">
-                    <a href="">
-                        <h3 class="card-title text-uppercase">
-                            {{player_name}}
-                        </h3>
-                        <h3 class="card-title text-uppercase">
-                            {{player_number}}
-                        </h3>
-                    </a>
-                    <p>{{timeago createAdmonitions}}</p>
+<link rel="stylesheet" href="/css/cards.css">
+<div class="container">
+    {{#each admonitions}}
+    <div class="card">
+        <div class="box">
+            <div class="content">
+                <h3>
+                    {{player_name}}
+                </h3>
+                <h3>
+                    {{player_number}}
+                </h3>
+                <center>
                     <a href="/admonitions/delete-admonition/{{id}}" style="background-color: red ; color:aliceblue;"
-                        class="btn btn-danger">Eliminar</a>
-                    <a href="/admonitions/edit-admonition/{{id}}"
-                        style="background-color: black; color:aliceblue;" class="btn btn-secondary">Editar</a>
-                </div>
+                        class="danger">Eliminar</a>
+                    <a href="/admonitions/edit-admonition/{{id}}" style="background-color: black; color:aliceblue;"
+                        class="secondary">Editar</a>
+                </center>
             </div>
         </div>
-        {{else}}
-        <div class="card">
-            <div class="box">
-                <div class="content">
-                    <p>Sin registros por el momento.</p>
-                    <a href="/admonitions/add-admonition">Crear uno!</a>
-                </div>
-            </div>
-        </div>
-        {{/each}}
     </div>
+    {{else}}
+    <div class="card">
+        <div class="box">
+            <div class="content">
+                <p>Sin registros por el momento.</p>
+                <a href="/admonitions/add-admonition">Crear uno!</a>
+            </div>
+        </div>
+    </div>
+    {{/each}}
 </div>

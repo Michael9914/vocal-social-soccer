@@ -1,29 +1,22 @@
-<div class="container p-4">
-    <div class="row">
-        <div class="col-md-4 mx-auto">
-            <div class="card">
-                <div class="card-body">
-                    <form action="/players/post-player" method="POST">
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="name" placeholder="Nombre del jugador"
-                                autofocus>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="position" placeholder="Posición del jugador"
-                                autofocus>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="shirt_number" class="form-control" placeholder="Número de camiseta">
-                        </div>
-                        <div class="form-group">
-                            <button class="btn btn-success btn-block">
-                                Guardar
-                            </button>
-                        </div>
-                    </form>
-                    <link rel="stylesheet" href="/css/styles-add-player.css">
+<div class="formbg-outer">
+    <div class="formbg">
+        <div class="formbg-inner padding-horizontal--48">
+            <form action="/players/post-player" method="POST">
+                <div class="field padding-bottom--24">
+                    <input type="text" class="form-control" name="name" placeholder="Nombre del jugador" autofocus>
                 </div>
-            </div>
+                <div class="field padding-bottom--24">
+                    <input type="text" class="form-control" name="position" placeholder="Posición del jugador"
+                        autofocus>
+                </div>
+                <div class="field padding-bottom--24">
+                    <input type="text" name="shirt_number" class="form-control" placeholder="Número de camiseta">
+                </div>
+                <div class="field padding-bottom--24">
+                    <input type="submit" name="submit" value="Guardar">
+                </div>
+            </form>
+            <link rel="stylesheet" href="/css/forms.css">
         </div>
     </div>
 </div>

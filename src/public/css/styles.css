@@ -83,3 +83,14 @@ font-family: 'Oswald', sans-serif;
     scroll-container{
       width:40vh ;    }
   }
+
+  #logo {
+    float: left;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #002e5b;
+    font-weight: 600;
+    padding: 20px 0px;
+    text-decoration: unset;
+
+}

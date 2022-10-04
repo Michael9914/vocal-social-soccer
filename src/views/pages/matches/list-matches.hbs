@@ -1,38 +1,35 @@
-<link rel="stylesheet" href="/css/styles-list-match.css">
-<div class="container p-4">
-    <div class="row">
-        {{#each matches}}
-        <div class="card">
-            <div class="box">
-                <div class="content">
-                    <a href="">
-                        <h3 class="card-title text-uppercase">
-                            {{stadium}}
-                        </h3>
-                        <h3 class="card-title text-uppercase">
-                            {{date_start}}
-                        </h3>
-                        <h3 class="card-title text-uppercase">
-                            {{time_start}}
-                        </h3>
-                    </a>
-                    <p>{{timeago createMatches}}</p>
+<link rel="stylesheet" href="/css/cards.css">
+<div class="container">
+    {{#each matches}}
+    <div class="card">
+        <div class="box">
+            <div class="content">
+                <h3>
+                    {{stadium}}
+                </h3>
+                <h3>
+                    {{date_start}}
+                </h3>
+                <h3>
+                    {{time_start}}
+                </h3>
+                <center>
                     <a href="/matches/delete-match/{{id}}" style="background-color: red ; color:aliceblue;"
-                        class="btn btn-danger" class="btn btn-danger">Eliminar</a>
-                    <a href="/matches/edit-match/{{id}}" style="background-color: rgb(12, 174, 0) ; color:aliceblue;"
-                        class="btn btn-secondary">Editar</a>
-                </div>
+                        class="danger" class="btn btn-danger">Eliminar</a>
+                    <a href="/matches/edit-match/{{id}}" style="background-color: black; color:aliceblue;"
+                        class="secondary">Editar</a>
+                </center>
             </div>
         </div>
-        {{else}}
-        <div class="card">
-            <div class="box">
-                <div class="content">
-                    <p>Sin registros por el momento.</p>
-                    <a href="/matches/add-match">Crear uno!</a>
-                </div>
-            </div>
-        </div>
-        {{/each}}
     </div>
+    {{else}}
+    <div class="card">
+        <div class="box">
+            <div class="content">
+                <p>Sin registros por el momento.</p>
+                <a href="/matches/add-match">Crear uno!</a>
+            </div>
+        </div>
+    </div>
+    {{/each}}
 </div>

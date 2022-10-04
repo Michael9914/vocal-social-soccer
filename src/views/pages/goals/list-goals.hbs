@@ -1,36 +1,35 @@
-<link rel="stylesheet" href="/css/styles-list-goal.css">
-<div class="container p-4">
-    <div class="row">
-        {{#each goals}}
-        <div class="card">
-            <div class="box">
-                <div class="content">
-                    <a href="">
-                        <h3 class="card-title text-uppercase">
-                            {{goal}}
-                        </h3>
-                        <h3 class="card-title text-uppercase">
-                            {{player_number}}
-                        </h3>
-                        <h3 class="card-title text-uppercase">
-                            {{team_name}}
-                        </h3>
-                    </a>
-                    <p>{{timeago createGoals}}</p>
-                    <a href="/goals/delete-goal/{{id}}" style="background-color: red ; color:aliceblue;" class="btn btn-danger">Eliminar</a>
-                    <a href="/goals/edit-goal/{{id}}"  style="background-color: rgb(12, 174, 0) ; color:aliceblue;" class="btn btn-secondary">Editar</a>
-                </div>
+<link rel="stylesheet" href="/css/cards.css">
+<div class="container">
+    {{#each goals}}
+    <div class="card">
+        <div class="box">
+            <div class="content">
+                <h3>
+                    {{goal}}
+                </h3>
+                <h3>
+                    {{player_number}}
+                </h3>
+                <h3>
+                    {{team_name}}
+                </h3>
+                <center>
+                    <a href="/goals/delete-goal/{{id}}" style="background-color: red ; color:aliceblue;"
+                        class="danger">Eliminar</a>
+                    <a href="/goals/edit-goal/{{id}}" style="background-color: black; color:aliceblue;"
+                        class="secondary">Editar</a>
+                </center>
             </div>
         </div>
-        {{else}}
-        <div class="card">
-            <div class="box">
-                <div class="content">
-                    <p>Sin registros por el momento.</p>
-                    <a href="/goals/add-goal">Crear uno!</a>
-                </div>
-            </div>
-        </div>
-        {{/each}}
     </div>
+    {{else}}
+    <div class="card">
+        <div class="box">
+            <div class="content">
+                <p>Sin registros por el momento.</p>
+                <a href="/goals/add-goal">Crear uno!</a>
+            </div>
+        </div>
+    </div>
+    {{/each}}
 </div>
