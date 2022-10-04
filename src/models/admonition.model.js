@@ -9,6 +9,7 @@ const admonitions =(sequelize, type) =>{
         
         player_name: type.STRING,
         player_number: type.INTEGER,
+        team_name: type.STRING,
         
 
         createAdmonitions:{

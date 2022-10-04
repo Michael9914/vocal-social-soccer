@@ -7,12 +7,12 @@ Expulsions.postExpulsion = async (req, res) => {
   const {
     player_name,
     player_number,
-
+    team_name,
   } = req.body;
   const newLink = {
     player_name,
     player_number,
-
+    team_name,
   };
   await pool.query('INSERT INTO expulsions set ?', [newLink]);
   req.flash('success', 'Expulsión creada correctamente');
@@ -40,11 +40,12 @@ Expulsions.editExpulsion = async (req, res) => {
 
 Expulsions.updateExpulsion = async (req, res) => {
   const { id } = req.params;
-  const { player_name, player_number } = req.body;
+  const { player_name, player_number, team_name,} = req.body;
   const newLink =
   {
     player_name,
-    player_number
+    player_number,
+    team_name,
   };
   await pool.query('UPDATE expulsions set ? WHERE id = ?', [newLink, id]);
   req.flash('success', 'Expulsión EDITADA CORRECTAMENTE');

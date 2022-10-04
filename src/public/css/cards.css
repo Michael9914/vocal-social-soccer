@@ -15,7 +15,7 @@ body .container {
     max-width: 1200px;
     margin: 0% 0%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    width: 15%;
+    width: 100%;
     margin-top: 2%;
     background-color:#ccc;
     border-radius: 10%;
@@ -24,7 +24,7 @@ body .container {
 body .container .card {
     position: relative;
     min-width: 210px;
-    height: 260px;
+    height: 560px;
     box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
       inset -5px -5px 15px rgba(0, 0, 0, 0.1),
       5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
@@ -33,9 +33,20 @@ body .container .card {
     transition: 0.5s;
   }
   
-body .container .card .box .content h3 {
+  body .container .card .box .content h3 {
     font-size: 1.8rem;
     color: brown;
+    z-index: 1;
+    transition: 0.5s;
+    margin-bottom: 0%;
+    display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+body .container .card .box .content h5 {
+    font-size: 1.3rem;
+    color: rgb(0, 0, 0);
     z-index: 1;
     transition: 0.5s;
     margin-bottom: 0%;

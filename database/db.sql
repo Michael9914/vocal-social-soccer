@@ -34,8 +34,9 @@ DESCRIBE players;
 CREATE TABLE goal(
     id INT(11) NOT NULL,
     gol INT,
-    player_name VARCHAR(16) NOT NULL,
+    player_number INT(16) NOT NULL,
     team_name VARCHAR(60) NOT NULL,
+    
     
 );
 
@@ -111,6 +112,7 @@ CREATE TABLE admonition(
     id INT(11) NOT NULL,
     player_name VARCHAR (60) NOT NULL,
     player_number INT NOT NULL,
+    team_name VARCHAR (60) NOT NULL,
     
 );
 
@@ -126,6 +128,7 @@ CREATE TABLE expulsion(
     id INT(11) NOT NULL,
     player_name VARCHAR (60) NOT NULL,
     player_number INT NOT NULL,
+    team_name VARCHAR (60) NOT NULL,
     
 );
 

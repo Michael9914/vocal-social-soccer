@@ -7,11 +7,13 @@ Admonitions.postAdmonition = async (req, res) => {
   const {
     player_name,
     player_number,
+    team_name,
 
   } = req.body;
   const newLink = {
     player_name,
     player_number,
+    team_name,
 
   };
   await pool.query('INSERT INTO admonitions set ?', [newLink]);
@@ -41,11 +43,12 @@ Admonitions.editAdmonition = async (req, res) => {
 
 Admonitions.updateAdmonition = async (req, res) => {
   const { id } = req.params;
-  const { player_name, player_number } = req.body;
+  const { player_name, player_number, team_name, } = req.body;
   const newLink =
   {
     player_name,
-    player_number
+    player_number,
+    team_name,
   };
   await pool.query('UPDATE admonitions set ? WHERE id = ?', [newLink, id]);
   req.flash('success', 'amonestación EDITADO CORRECTAMENTE')
